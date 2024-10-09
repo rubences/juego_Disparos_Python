@@ -1,4 +1,6 @@
+import pygame
 from entity import Entity
+from player import Player
 
 class Shot(Entity):
     def __init__(self, game, character):
