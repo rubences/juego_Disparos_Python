@@ -16,3 +16,7 @@ class Shot(Entity):
         self.y -= self.speed if isinstance(self.game.player, Player) else self.speed
         if self.y < 0 or self.y > self.game.height:
             self.game.player_shots.remove(self) if isinstance(self.game.player, Player) else self.game.opponent_shots.remove(self)
+
+    def __str__(self):
+        return super().__str__() + ' (SHOT)'
+    

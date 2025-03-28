@@ -21,3 +21,17 @@ class Player(Character):
                 self.x += self.speed
             if keys[pygame.K_SPACE]:
                 self.game.shoot(self)
+
+    def die(self):
+        super().die()
+        self.lives -= 1
+        if self.lives == 0:
+            self.game.game_over()
+        else:
+            self.x = self.game.width // 2 - self.width // 2
+            self.y = self.game.height - self.height
+        
+    def __str__(self):
+        return super().__str__() + ' (PLAYER)'
+    
+    

@@ -87,3 +87,5 @@ class Game:
         pygame.display.flip()
         pygame.time.wait(2000)
         self.running = False
+
+    

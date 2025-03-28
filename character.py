@@ -16,3 +16,26 @@ class Character(Entity):
     def collide_with_player(self):
         self.dead = True
         pygame.time.set_timer(pygame.USEREVENT, 2000)
+
+    def die(self):
+        self.dead = True
+
+    def render(self):
+        if self.dead:
+            self.game.screen.blit(self.dead_image, (self.x, self.y))
+        else:
+            super().render()
+
+    def __str__(self):
+        return super().__str__() + ' (CHARACTER)'
+    
+    def __repr__(self):
+        return self.__str__()
+    
+    def __eq__(self, other):
+        return super().__eq__(other)
+    
+    def __hash__(self):
+        return super().__hash__()
+    
+    

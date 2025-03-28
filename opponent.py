@@ -17,3 +17,12 @@ class Opponent(Character):
             self.y += self.speed
             if self.y > self.game.height:
                 self.y = 0
+
+    def die(self):
+        super().die()
+        self.game.score += 1
+
+    def __str__(self):
+        return super().__str__() + ' (OPPONENT)'
+
+    
